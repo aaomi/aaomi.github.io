@@ -7,6 +7,12 @@
 - Browse to [http://localhost:8080](http://localhost:8080)
 - Calvin - for now, just work exclusively in 'js/views/pages/HomePage/HomePage.js' and 'js/views/pages/HomePage/HomePage.scss'
 
+#### Project Management
+- Let's use Github Issues and Projects for issue tracking instead of Trello. That way it integrates well with commits
+
+#### Git notes:
+- I've gotten used to using this format for git commits so that GitHub recognizes the issue you are working on: `git commit -am "#1 - embedded Youtube Video"` and `git commit -am "#1, #2 - embedded Youtube Video, added Header"` when there's more than one issue addressed in a commit.
+
 ### Front End Priorities:
 - Landing Page with Video (All Tammy wants at first is [this video](https://www.youtube.com/watch?v=BrJsyBGuJNY), a nice header, a nice footer with link to AAoM, and maybe a call to action section with 3+ buttons/pages/descriptions for employers, job seekers, and young professionals)
 - Job Seeker Form
