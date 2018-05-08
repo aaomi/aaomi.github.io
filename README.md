@@ -1,4 +1,4 @@
-# upbound-front-end
+# Upbound at work - front-end
 
 ### Front End Priorities:
 - Landing Page with Video (All Tammy wants at first is [this video](https://www.youtube.com/watch?v=BrJsyBGuJNY), a nice header, a nice footer with link to AAoM, and maybe a call to action section with 3+ buttons/pages/descriptions for employers, job seekers, and young professionals)
