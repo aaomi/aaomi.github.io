@@ -14,6 +14,7 @@
 - Lodash - JS toolset
 - Webpack - JS compiler - might change to yarn or something else new and fancy/simpler
 - ES6+ and babel - ability to use new JS features and have it be compatable with older browsers still
+- [BEM CSS naming system](http://getbem.com/naming/)
 
 #### Important things to consider:
 - Ease of use / lack of commitment / not overwhelming intake process for job seekers
