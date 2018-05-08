@@ -1,0 +1,52 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "eslint:recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended"
+  ],
+  "plugins": [
+    "react",
+    "jsx-a11y"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 7,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true,
+    "jquery": true,
+    "commonjs": true
+  },
+  "rules": {
+    "indent": ["error", 2],
+    "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+    "semi": "error",
+    "no-unused-vars": 1,
+    "no-mixed-spaces-and-tabs": 1,
+    "no-extra-boolean-cast": 0,
+    "no-irregular-whitespace": 0,
+    "no-console": 1,
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error"
+  },
+  "globals": {
+    "require": true,
+    "$": true,
+    "module": true,
+    "setTimeout": true,
+    "window": true,
+    "document": true,
+    "process": true
+  },
+  "settings": {
+    "import/resolver": webpack
+  }
+}

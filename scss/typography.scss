@@ -1,0 +1,18 @@
+@import '~scss/colors';
+
+body {
+  font-family: Helvetica, Arial, Lucida, sans-serif;
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+.title,
+h1,
+h2 {
+  font-weight: bold;
+}
+
+a {
+  &:hover {
+  }
+}
