@@ -19,4 +19,5 @@
 - Ease of use / lack of commitment / not overwhelming intake process for job seekers
 - Ford and other companies linking to the site
 - Accessibility
+- I18N
 - Ability to pass development on to someone else (Good testing, comments, documentation, etc.)
