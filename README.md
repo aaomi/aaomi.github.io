@@ -18,7 +18,4 @@
 #### Important things to consider:
 - Ease of use / lack of commitment / not overwhelming intake process for job seekers
 - Ford and other companies linking to the site
-- Importing existing database during transition to new database
-- Integration with / Exportability to Google Sheets
 - Accessibility
-- Database backups
