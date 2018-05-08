@@ -4,7 +4,7 @@
 - Clone the repo `git clone https://github.com/aaomi/upbound-front-end.git`
 - Run `npm install`
 - Run `npm start`
-- Browse to (http://localhost:8080)[http://localhost:8080]
+- Browse to [http://localhost:8080](http://localhost:8080)
 - Calvin - for now, just work exclusively in 'js/views/pages/HomePage/HomePage.js' and 'js/views/pages/HomePage/HomePage.scss'
 
 ### Front End Priorities:
