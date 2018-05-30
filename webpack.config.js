@@ -1,9 +1,8 @@
-var _assign = require('lodash/assign'),
-  webpack = require('webpack'),
+var webpack = require('webpack'),
   path = require('path'),
   HtmlWebpackPlugin = require('html-webpack-plugin'),
   ExtractTextPlugin = require('extract-text-webpack-plugin'),
-  MinifyPlugin = require("babel-minify-webpack-plugin"),
+  MinifyPlugin = require('babel-minify-webpack-plugin'),
   __PROD__ = process.env.NODE_ENV === 'production',
   __DEV__ = !__PROD__,
   BABEL_LOADER_PRESETS_PRODUCTION = ['env', 'react', 'stage-0'],
@@ -36,7 +35,8 @@ var _assign = require('lodash/assign'),
 var config = {
   mode: process.env.NODE_ENV || 'development',
   entry: {
-    main: './index.js'
+    main: './index.js',
+    vendor: './vendor.js'
   },
   output: {
     path: path.join(__dirname, 'build'),
@@ -55,32 +55,69 @@ var config = {
           ]
         })
       },
+      // {
+      //   test: /\.ttf$/,
+      //   use: [
+      //     {
+      //       loader: 'url-loader',
+      //       options: {
+      //         limit: 50000,
+      //         mimeType: 'application/octet-stream'
+      //       }
+      //     }
+      //   ]
+      // },
       {
-        test: /\.json$/,
-        use: 'json-loader'
-      },
-      {
-        test: /\.pug$/,
-        use: 'pug-loader'
-      },
-      {
-        test: /\.ttf$/,
+        // minify imported images and copy them to build directory
+        test: /\.(jpe?g|png|gif|svg)$/i,
         use: [
           {
-            loader: 'url-loader',
-            options: {
-              limit: 50000,
-              mimeType: 'application/octet-stream'
+            loader: 'file-loader',
+            query: {
+              hash: 'sha512',
+              digest: 'hex',
+              name: '[hash].[ext]'
+            }
+          },
+          {
+            loader: 'image-webpack-loader',
+            query: {
+              mozjpeg: {
+                progressive: true,
+              },
+              gifsicle: {
+                interlaced: false,
+              },
+              optipng: {
+                optimizationLevel: 7,
+              },
+              pngquant: {
+                quality: '75-90',
+                speed: 3,
+              },
+              bypassOnDebug: true
             }
           }
         ]
+      },
+      {
+        // copy imported fonts to build directory
+        test: /\.(ttf|otf|eot|woff(2)?)(\?[a-z0-9]+)?$/,
+        use: {
+          loader: 'file-loader',
+          query: {
+            hash: 'sha512',
+            digest: 'hex',
+            name: '[hash].[ext]'
+          }
+        }
       }
     ]
   },
   resolve: {
     modules: [
-      __dirname,
-      'node_modules'
+      path.resolve(__dirname),
+      path.resolve(__dirname, 'node_modules')
     ]
   },
   plugins: [
@@ -89,7 +126,7 @@ var config = {
       inject: false,
       cache: false,
       template: 'index.pug',
-      filename: '../index_compiled.html',
+      filename: 'build/index_compiled.html',
       title: 'Upbound at work',
       description: 'Upbound at work',
       author: 'AAoM'

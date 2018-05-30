@@ -9,13 +9,13 @@ import AppWrapper from 'js/view_controllers/AppWrapper';
 
 import HomePage from 'js/view_controllers/pages/HomePage';
 
-ReactDOM.render((
-  <Provider store={store} >
-    <BrowserRouter>
-      <AppWrapper>
-        <Route component={HomePage} path='/' />
-        <Redirect from='*' to='/' />
-      </AppWrapper>
-    </BrowserRouter>
-  </Provider>
-), document.getElementById('upbound-root'));
+// ReactDOM.render((
+//   <Provider store={store} >
+//     <BrowserRouter>
+//       <AppWrapper>
+//         <Route component={HomePage} path='/' />
+//         <Redirect from='*' to='/' />
+//       </AppWrapper>
+//     </BrowserRouter>
+//   </Provider>
+// ), document.getElementById('upbound-root'));
