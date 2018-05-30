@@ -17,3 +17,13 @@ require('js/vendor/spectragram.min.js');
 require('js/vendor/scripts.js');
 
 require('scss/vendor.scss');
+
+require('fonts/iconsmind.eot');
+require('fonts/iconsmind.ttf');
+require('fonts/iconsmind.woff');
+
+require('fonts/stack-interface.eot');
+require('fonts/stack-interface.svg');
+require('fonts/stack-interface.ttf');
+require('fonts/stack-interface.woff');
+require('fonts/stack-interface.woff2');
