@@ -1,6 +1,6 @@
-var _assign = require('lodash/assign'),
-  webpack = require('webpack'),
+var webpack = require('webpack'),
   path = require('path'),
+  CleanWebpackPlugin = require('clean-webpack-plugin'),
   HtmlWebpackPlugin = require('html-webpack-plugin'),
   ExtractTextPlugin = require('extract-text-webpack-plugin'),
   MinifyPlugin = require('babel-minify-webpack-plugin'),
@@ -31,16 +31,18 @@ var _assign = require('lodash/assign'),
         }
       }
     ]
-  };
+  },
+  WEBPACK_BUILD_DIRECTORY = 'docs';
 
 var config = {
   mode: process.env.NODE_ENV || 'development',
   entry: {
-    main: './index.js'
+    main: path.join(__dirname, 'index.js'),
+    vendor: path.join(__dirname, 'vendor.js')
   },
   output: {
-    path: path.join(__dirname, 'build'),
-    publicPath: '/build/',
+    path: path.join(__dirname, WEBPACK_BUILD_DIRECTORY),
+    publicPath: '/',
     filename: '[name].js'
   },
   module: {
@@ -56,40 +58,73 @@ var config = {
         })
       },
       {
-        test: /\.json$/,
-        use: 'json-loader'
-      },
-      {
         test: /\.pug$/,
-        use: 'pug-loader'
+        use: [
+          'pug-loader'
+        ]
       },
       {
-        test: /\.ttf$/,
+        // minify imported images and copy them to build directory
+        test: /\.(jpe?g|png|gif|svg)$/i,
         use: [
           {
-            loader: 'url-loader',
-            options: {
-              limit: 50000,
-              mimeType: 'application/octet-stream'
+            loader: 'file-loader',
+            query: {
+              hash: 'sha512',
+              digest: 'hex',
+              name: '[name].[hash].[ext]'
+            }
+          },
+          {
+            loader: 'image-webpack-loader',
+            query: {
+              mozjpeg: {
+                progressive: true,
+              },
+              gifsicle: {
+                interlaced: false,
+              },
+              optipng: {
+                optimizationLevel: 7,
+              },
+              pngquant: {
+                quality: '75-90',
+                speed: 3,
+              },
+              bypassOnDebug: true
             }
           }
         ]
+      },
+      {
+        // copy imported fonts to build directory
+        test: /\.(ttf|otf|eot|woff(2)?)(\?[a-z0-9]+)?$/,
+        use: {
+          loader: 'file-loader',
+          query: {
+            hash: 'sha512',
+            digest: 'hex',
+            name: 'fonts/[name].[ext]'
+          }
+        }
       }
     ]
   },
   resolve: {
     modules: [
-      __dirname,
-      'node_modules'
+      path.resolve(__dirname),
+      path.resolve(__dirname, 'node_modules')
     ]
   },
   plugins: [
-    new ExtractTextPlugin('[name].css'),
+    new CleanWebpackPlugin([
+      path.join(__dirname, WEBPACK_BUILD_DIRECTORY)
+    ]),
     new HtmlWebpackPlugin({
       inject: false,
       cache: false,
-      template: 'index.pug',
-      filename: '../index_compiled.html',
+      template: path.join(__dirname, 'index.pug'),
+      filename: 'index.html',
       title: 'Upbound at work',
       description: 'Upbound at work',
       author: 'AAoM'
@@ -113,6 +148,7 @@ if (__DEV__) {
   );
 
   config.plugins.push(
+    new ExtractTextPlugin('[name].css'),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.LoaderOptionsPlugin({
       debug: true
@@ -120,19 +156,15 @@ if (__DEV__) {
   );
 
 } else if (__PROD__) {
+  config.output.filename = '[name].[hash].js';
+
   config.module.rules.push(
     BABEL_RULE_CONFIG_PRODUCTION
   );
 
   config.plugins.push(
+    new ExtractTextPlugin('[name].[hash].css'),
     new MinifyPlugin(),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        unused: true,
-        dead_code: true,
-        warnings: false
-      }
-    }),
     new webpack.optimize.AggressiveMergingPlugin()
   );
 }

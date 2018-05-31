@@ -1,14 +1,15 @@
 doctype html
 html(style='height: 100%')
   head
-    meta(http-equiv="Content-type" content="text/html; charset=utf-8")
+    meta(http-equiv='Content-type' content='text/html; charset=utf-8')
     meta(name='viewport', content='width=device-width, shrink-to-fit=no, initial-scale=1')
-    meta(name='description', content='${htmlWebpackPlugin.options.description}')
-    meta(name='author', content='${htmlWebpackPlugin.options.author}')
-    title #{htmlWebpackPlugin.options.title}
+    meta(name='description', content=htmlWebpackPlugin.options.description)
+    meta(name='author', content=htmlWebpackPlugin.options.author)
+    title= htmlWebpackPlugin.options.title
+    each cssFile in htmlWebpackPlugin.files.css
+      link(href=cssFile, rel='stylesheet')
   body(style='height: 100%')
     div(id='upbound-root', style='height: 100%;')
-    each cssFile in htmlWebpackPlugin.files.css
-      style !{compilation.assets[cssFile.substr(htmlWebpackPlugin.files.publicPath.length)].source()}
     each jsFile in htmlWebpackPlugin.files.js
-      script(type="text/javascript") !{compilation.assets[jsFile.substr(htmlWebpackPlugin.files.publicPath.length)].source()}
+      script(type='text/javascript', src=jsFile, defer='defer')
+        
