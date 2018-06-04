@@ -61,7 +61,8 @@
     "webpack-dev-server": "^3.1.4"
   },
   "scripts": {
-    "start": "webpack-dev-server --progress --inline"
+    "start": "webpack-dev-server --progress --inline",
+    "prod.fish": "env NODE_ENV=production webpack; http-server docs/"
   },
   "author": "AAoM"
 }
