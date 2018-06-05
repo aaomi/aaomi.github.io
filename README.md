@@ -11,6 +11,7 @@
 - Compile the index.html and any assets that are required: `npm run prod` or `npm run prod.fish` or `npm run compile`
 - The `prod` or `prod.fish` command should have launched an http-server hosted at http://localhost:8080 (Make sure the process running after `npm start` is no longer active first to avoid port conflicts) or you can run it separately if you ran `compile` by running `./node_modules/bin/http-server`
 - Make sure everything looks good on the website [locally](http://localhost:8080)
+- Commit the new changes! `git add .` and `git commit -am "Message about the commit"`
 - Preferably, we would make a separate branch `git checkout -b new-branch-name`, push up the new branch, and then create a pull request from the new branch into master
 - As an alternative, you could just push straight into master if you know it is working properly. This should not be done once people are counting on the site.
 
