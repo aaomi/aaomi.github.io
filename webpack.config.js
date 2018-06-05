@@ -32,7 +32,7 @@ var webpack = require('webpack'),
       }
     ]
   },
-  WEBPACK_BUILD_DIRECTORY = 'docs';
+  WEBPACK_BUILD_DIRECTORY = 'docs/';
 
 var config = {
   mode: process.env.NODE_ENV || 'development',
@@ -42,7 +42,7 @@ var config = {
   },
   output: {
     path: path.join(__dirname, WEBPACK_BUILD_DIRECTORY),
-    publicPath: '/',
+    publicPath: __PROD__ ? WEBPACK_BUILD_DIRECTORY : '/',
     filename: '[name].js'
   },
   module: {
@@ -59,9 +59,7 @@ var config = {
       },
       {
         test: /\.pug$/,
-        use: [
-          'pug-loader'
-        ]
+        use: 'pug-loader'
       },
       {
         // minify imported images and copy them to build directory
@@ -117,6 +115,10 @@ var config = {
     ]
   },
   plugins: [
+    new webpack.DefinePlugin({
+      __PROD__,
+      __DEV__
+    }),
     new CleanWebpackPlugin([
       path.join(__dirname, WEBPACK_BUILD_DIRECTORY)
     ]),
@@ -124,7 +126,7 @@ var config = {
       inject: false,
       cache: false,
       template: path.join(__dirname, 'index.pug'),
-      filename: 'index.html',
+      filename: (__PROD__ ? '../' : '') + 'index.html',
       title: 'Upbound at work',
       description: 'Upbound at work',
       author: 'AAoM'

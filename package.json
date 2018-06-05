@@ -62,7 +62,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server --progress --inline",
-    "prod.fish": "env NODE_ENV=production webpack; http-server docs/"
+    "prod.fish": "env NODE_ENV=production webpack; http-server"
   },
   "author": "AAoM"
 }
