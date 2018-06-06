@@ -17,7 +17,7 @@
 
 #### To push changes without changing live site:
 1. No need to compile anything, though running the dev server (`npm start`) will have deleted the live site's contents
-2. To reset the live site content, run `npm run reset` or `npm run reset.fish`. This will replace `index.html` and the `docs/` folder with the current version of the content from whatever branch you're on
+2. To reset the live site content, run `bash scripts/reset_compiled_assets.sh` or `fish scripts/reset_compiled_assets.fish`. This will replace `index.html` and the `docs/` folder with the current version of the content from whatever branch you're on
 3. Follow steps 4 and 5 above
 
 #### Code editor/IDE
