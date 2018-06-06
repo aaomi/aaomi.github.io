@@ -8,12 +8,17 @@
 - Calvin - for now, just work exclusively in 'js/views/pages/HomePage/HomePage.js' and 'js/views/pages/HomePage/HomePage.scss'
 
 #### To push a new version to the live site:
-- Compile the index.html and any assets that are required: `npm run prod` or `npm run prod.fish` or `npm run compile`
-- The `prod` or `prod.fish` command should have launched an http-server hosted at http://localhost:8080 (Make sure the process running after `npm start` is no longer active first to avoid port conflicts) or you can run it separately if you ran `compile` by running `./node_modules/.bin/http-server`
-- Make sure everything looks good on the website [locally](http://localhost:8080)
-- Commit the new changes! `git add .` and `git commit -am "Message about the commit"`
-- Preferably, we would make a separate branch `git checkout -b new-branch-name`, push up the new branch, and then create a pull request from the new branch into master
+1. Compile the index.html and any assets that are required: `npm run prod` or `npm run prod.fish` or `npm run compile`
+2. The `prod` or `prod.fish` command should have launched an http-server hosted at http://localhost:8080 (Make sure the process running after `npm start` is no longer active first to avoid port conflicts) or you can run it separately if you ran `compile` by running `./node_modules/.bin/http-server`
+3. Make sure everything looks good on the website [locally](http://localhost:8080)
+4. Commit the new changes! `git add .` and `git commit -am "Message about the commit"`
+5. Preferably, we would make a separate branch `git checkout -b new-branch-name`, push up the new branch, and then create a pull request from the new branch into master
 - As an alternative, you could just push straight into master if you know it is working properly. This should not be done once people are counting on the site.
+
+#### To push changes without changing live site:
+1. No need to compile anything, though running the dev server (`npm start`) will have deleted the live site's contents
+2. To reset the live site content, run `npm run reset` or `npm run reset.fish`. This will replace `index.html` and the `docs/` folder with the current version of the content from whatever branch you're on
+3. Follow steps 4 and 5 above
 
 #### Project Management
 - Let's use Github Issues and Projects for issue tracking instead of Trello. That way it integrates well with commit messages
