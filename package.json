@@ -66,8 +66,7 @@
   "scripts": {
     "start": "./node_modules/.bin/webpack-dev-server --progress --inline",
     "compile": "NODE_ENV=production ./node_modules/.bin/webpack",
-    "prod": "NODE_ENV=production ./node_modules/.bin/webpack && ./node_modules/.bin/http-server",
-    "prod.fish": "env NODE_ENV=production ./node_modules/.bin/webpack ;and ./node_modules/.bin/http-server"
+    "prod": "NODE_ENV=production ./node_modules/.bin/webpack && ./node_modules/.bin/http-server"
   },
   "author": "AAoM"
 }
