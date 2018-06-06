@@ -1,55 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import 'js/views/pages/HomePage/HomePage.scss';
+
+import Header from 'js/views/Header/Header';
+
+import { ROUTE_CONTACT_PAGE } from 'js/constants/routes';
 
 export default function HomePage() {
   return (
     <div className='upbound-page--home' id='start'>
-      <div className='nav-container'>
-        <div className='bar bar--sm visible-xs'>
-          <div className='container'>
-            <div className='row'>
-              <div className='col-3 col-md-3'>
-                <a href='/'>
-                  <img className='logo logo-dark' alt='logo' src={require('img/upBound.png')} />
-                  <img className='logo logo-light' alt='logo' src={require('img/upBound.png')} />
-                </a>
-              </div>
-              <div className='col-9 col-md-10 text-right'>
-                <a href='javascript:void(0)' className='hamburger-toggle' data-toggle-class='#menu1;hidden-xs'>
-                  <i className='icon icon--sm stack-interface stack-menu'></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <nav id='menu1' className='bar bar--sm bar-1 hidden-xs bar--absolute bar--transparent'>
-          <div className='container'>
-            <div className='row'>
-              <div className='col-lg-1 col-md-3 hidden-xs'>
-                <div className='bar__module'>
-                  <a href='/'>
-                    <img className='logo logo-dark' alt='logo' src={require('img/upBound.png')} />
-                    <img className='logo logo-light' alt='logo' src={require('img/upBound.png')} />
-                  </a>
-                </div>
-              </div>
-              <div className='col-lg-11 col-md-12 text-right text-left-xs text-left-sm'>
-                <div className='bar__module'>
-                  <ul className='menu-horizontal text-left'></ul>
-                </div>
-                <div className='bar__module'>
-                  <a className='btn btn--sm btn--primary type--uppercase' href='#contact'>
-                    <span className='btn__text'>
-                      Contact
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </nav>
-      </div>
+      {/* Calvin - this is a good, simple example of how to use components */}
+      <Header />
       <div className='main-container'>
         <section className='cover imagebg videobg height-90 text-center' style={{ background: 'none' }}>
           <video autoPlay loop muted></video>
@@ -74,11 +36,11 @@ export default function HomePage() {
             <div style={{ width: 500 }} className='text-center'></div>
           </div>
           <div className='pos-bottom pos-absolute col-12 text-center'>
-            <a className='btn btn--md btn--primary type--uppercase' href='#contact'>
+            <Link className='btn btn--md btn--primary type--uppercase' to={ROUTE_CONTACT_PAGE}>
               <span className='btn__text'>
                 Contact Us
               </span>
-            </a>
+            </Link>
           </div>
         </section>
         <section className='cover height-90 imagebg parallax' data-overlay='4'>

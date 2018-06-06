@@ -120,7 +120,8 @@ var config = {
       __DEV__
     }),
     new CleanWebpackPlugin([
-      path.join(__dirname, WEBPACK_BUILD_DIRECTORY)
+      path.join(__dirname, WEBPACK_BUILD_DIRECTORY),
+      path.join(__dirname, 'index.html')
     ]),
     new HtmlWebpackPlugin({
       inject: false,
