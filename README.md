@@ -5,7 +5,7 @@
 - Run `npm install`
 - Run `npm start`
 - Browse to [http://localhost:8080](http://localhost:8080)
-- Calvin - for now, just work exclusively in 'js/views/pages/HomePage/HomePage.js' and 'js/views/pages/HomePage/HomePage.scss'
+- Calvin - for now, just work exclusively in 'js/views/pages/HomePage/HomePage.js', 'js/views/pages/HomePage/HomePage.scss', 'js/views/pages/ContactPage/ContactPage.scss', and 'js/views/pages/ContactPage/ContactPage.js'
 
 #### To push a new version to the live site:
 1. Compile the index.html and any assets that are required: `npm run prod` or `npm run prod.fish` or `npm run compile`
@@ -19,6 +19,11 @@
 1. No need to compile anything, though running the dev server (`npm start`) will have deleted the live site's contents
 2. To reset the live site content, run `npm run reset` or `npm run reset.fish`. This will replace `index.html` and the `docs/` folder with the current version of the content from whatever branch you're on
 3. Follow steps 4 and 5 above
+
+#### Code editor/IDE
+- I highly recommend using Atom
+- With Atom (or a few other editors), you should install a few packages (hit CMD/CTRL+Shift+P, type "Install Packages") to help keep our code consistent
+- language-babel, atom-ide-ui, linter-eslint, linter-csslint, linter-jsonlint, linter-sass-lint, linter-ui-default
 
 #### Project Management
 - Let's use Github Issues and Projects for issue tracking instead of Trello. That way it integrates well with commit messages
