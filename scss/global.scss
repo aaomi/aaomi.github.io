@@ -9,3 +9,21 @@ body {
 *::after {
   box-sizing: border-box;
 }
+
+.bar .logo {
+  max-height: 4.5em;
+  max-width: none;
+  margin: 0;
+  position: relative;
+  top: 4px;
+  @media (max-width: 767px) {
+    &.logo-light {
+      display: none;
+    }
+  }
+  @media (min-width: 768px) {
+    &.logo-dark {
+      display: none;
+    }
+  }
+}

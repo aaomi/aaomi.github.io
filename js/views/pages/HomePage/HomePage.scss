@@ -1,0 +1,40 @@
+.upbound-page--home {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.upbound-page--home__hero--coming-soon {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  margin-top: 1em;
+
+  text-align: center;
+}
+
+.upbound-page--home__hero--coming-soon__logo--aaom {
+  width: 100%;
+  max-width: 400px;
+}
+
+.upbound-page--home__hero--coming-soon__logo--aaom,
+.upbound-page--home__hero--coming-soon__text__project-by {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.upbound-page--home__hero--coming-soon__text__project-by {
+  margin-right: 1em;
+}
+
+.upbound-page--home__hero--coming-soon__text__coming-soon {
+  font-weight: bold;
+  @media (min-width: 768px) {
+    padding: 1em 0;
+  }
+}
+
+.upbound-page--home__hero--coming-soon__text--job-seeker-prompt {
+  margin-top: 1em;
+}

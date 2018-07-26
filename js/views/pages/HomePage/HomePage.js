@@ -1,18 +1,25 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 import 'js/views/pages/HomePage/HomePage.scss';
 
-import Header from 'js/views/Header/Header';
+import AAOM_LOGO from 'img/aaom_logo.png';
 
-import { ROUTE_CONTACT_PAGE } from 'js/constants/routes';
+// import { ROUTE_CONTACT_PAGE } from 'js/constants/routes';
 
 export default function HomePage() {
   return (
-    <div className='upbound-page--home' id='start'>
-      {/* Calvin - this is a good, simple example of how to use components */}
-      <Header />
-      <div className='main-container'>
+    <div className='upbound-page upbound-page--home' id='start'>
+      <div className='upbound-page--home__hero--coming-soon'>
+        <h1 className='upbound-page--home__hero--coming-soon__text__coming-soon'>Coming soon!</h1>
+        <h2 className='upbound-page--home__hero--coming-soon__text__project-by'>A project by:</h2>
+        <a href='https://autismallianceofmichigan.org/'><img className='upbound-page--home__hero--coming-soon__logo--aaom' src={AAOM_LOGO} alt='Autism Alliance of Michigan' /></a>
+        <h2 className='upbound-page--home__hero--coming-soon__text--job-seeker-prompt'>Are you seeking a job? Fill out our form here: </h2>
+        <h2>
+          <a href='https://autismallianceofmichigan.org/employee-pre-assessment/'>Job Seeker Intake</a>
+        </h2>
+      </div>
+      {/* <div className='main-container'>
         <section className='cover imagebg videobg height-90 text-center' style={{ background: 'none' }}>
           <video autoPlay loop muted></video>
           <div className='background-image-holder'>
@@ -171,7 +178,7 @@ export default function HomePage() {
       </div>
       <a className='back-to-top inner-link' href='#start' data-scroll-class='100vh:active'>
         <i className='stack-interface stack-up-open-big'></i>
-      </a>
+      </a> */}
     </div>
   );
 }

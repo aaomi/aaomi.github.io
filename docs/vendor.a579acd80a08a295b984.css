@@ -11694,7 +11694,7 @@ body {
     padding: 4em 0;
   }
 }
-@media all and (min-height: 600px) and (min-width: 767px) {
+@media all and (min-height: 600px) and (min-width: 768px) {
   .height-10 {
     height: 10vh;
   }
@@ -12529,7 +12529,7 @@ ul:last-child {
 .dropdown.dropdown--active > .dropdown__container > .container > .row > .dropdown__content {
   pointer-events: all;
 }
-@media all and (min-width: 991px) {
+@media all and (min-width: 992px) {
   .dropdown .dropdown__container:before {
     height: 0.92857143em;
     width: 100%;
@@ -14569,7 +14569,7 @@ form[action*='list-manage.com'] .small-meta {
     z-index: 999;
   }
 }
-@media all and (min-width: 991px) {
+@media all and (min-width: 992px) {
   .bar__module:not(:only-child) {
     display: inline-block;
   }
@@ -16131,7 +16131,7 @@ section.parallax .row .background-image-holder {
     margin-left: 1.85714286em;
   }
 }
-@media all and (min-width: 991px) {
+@media all and (min-width: 992px) {
   .bar-2 .logo {
     position: absolute;
     left: 50%;
@@ -16838,7 +16838,7 @@ body.dropdowns--hover .nav-sidebar-column .dropdown:hover > .dropdown__container
     opacity: 0;
   }
 }
-@media all and (min-width: 991px) {
+@media all and (min-width: 992px) {
   .dropdown .dropdown__container:before {
     height: 18px;
   }
@@ -19150,7 +19150,7 @@ label {
 .subscribe-form-1.boxed form {
   margin: 1.85714286em;
 }
-@media all and (min-width: 991px) {
+@media all and (min-width: 992px) {
   .subscribe-form-2 p {
     top: 2px;
     position: relative;
@@ -19482,7 +19482,7 @@ label {
 .pricing-1 img + p:first-of-type {
   margin-top: 0;
 }
-@media all and (min-width: 991px) {
+@media all and (min-width: 992px) {
   .pricing-2 ul:first-child {
     margin-top: 4.64285714em;
   }
@@ -19982,7 +19982,7 @@ section.unpad > article .imagebg + div {
 .masonry-blog-magazine .height--tall {
   height: calc(706px);
 }
-@media all and (min-width: 991px) {
+@media all and (min-width: 992px) {
   .masonry__promo.boxed--lg {
     padding: 7.42857143em;
   }
@@ -20169,7 +20169,7 @@ section.unpad > article .imagebg + div {
 .related-blog-list article .article__title .h4 {
   margin-bottom: 0.68421052631579em;
 }
-@media all and (min-width: 991px) {
+@media all and (min-width: 992px) {
   .sidebar {
     margin-top: 7.42857143em;
     position: relative;
