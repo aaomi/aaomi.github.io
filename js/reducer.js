@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux';
 
-import placeholderReducer from 'js/reducers/placeholderReducer';
+import login from 'js/reducers/login';
+import jobSeekers from 'js/reducers/jobSeekers';
 
 var reducer = combineReducers({
-  placeholderReducer
+  login,
+  jobSeekers
 });
 
 export default reducer;

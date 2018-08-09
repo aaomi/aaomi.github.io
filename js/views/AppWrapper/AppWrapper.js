@@ -5,15 +5,23 @@ import 'js/views/AppWrapper/AppWrapper.scss';
 
 import Header from 'js/views/Header/Header';
 
-export default function AppWrapper({ children }) {
-  return (
-    <div className='upbound-app-wrapper'>
-      <Header />
-      {children}
-    </div>
-  );
+export default class AppWrapper extends React.Component {
+  constructor(props) {
+    super(props);
+
+    props.authenticate();
+  }
+  render() {
+    return (
+      <div className='upbound-app-wrapper'>
+        <Header />
+        {this.props.children}
+      </div>
+    );
+  }
 }
 
 AppWrapper.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  authenticate: PropTypes.func.isRequired
 };
