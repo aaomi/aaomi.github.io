@@ -7,12 +7,14 @@ export default class JobSeekersPage extends React.Component {
   constructor(props) {
     super(props);
 
-    if (props.loggedIn) {
+    if (!props.loggingIn) {
       props.fetchJobSeekers();
     }
   }
-  componentDidUpdate(previousProps) {
-    if (!this.props.loggedIn || previousProps.loggedIn === this.props.loggedIn) {
+  componentDidUpdate() {
+    if (this.props.loading || this.props.loggingIn ||
+      (this.props.jobSeekers && this.props.jobSeekers.length)
+    ) {
       return;
     }
 
@@ -36,7 +38,8 @@ export default class JobSeekersPage extends React.Component {
 }
 
 JobSeekersPage.propTypes = {
-  loggedIn: PropTypes.bool.required,
+  loggingIn: PropTypes.bool.required,
+  loading: PropTypes.bool.required,
   jobSeekers: PropTypes.array,
   fetchJobSeekers: PropTypes.func.required
 };

@@ -47,7 +47,9 @@
     "setTimeout": true,
     "window": true,
     "document": true,
-    "process": true
+    "process": true,
+    "__DEV__": true,
+    "__PROD__": true
   },
   "settings": {
     "import/resolver": "webpack"

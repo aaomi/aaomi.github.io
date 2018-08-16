@@ -1,11 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import 'js/views/Header/Header.scss';
 
 import { ROUTE_HOME_PAGE } from 'js/constants/routes';
 
-const Header = () => (
+import LogInButton from 'js/view_controllers/LogInButton';
+import LogOutButton from 'js/views/LogOutButton/LogOutButton';
+
+const Header = ({ loggedIn }) => (
   <div className='nav-container'>
     <div className='bar bar--sm visible-xs'>
       <div className='container'>
@@ -20,6 +24,7 @@ const Header = () => (
             {/* <a href='javascript:void(0)' className='hamburger-toggle' data-toggle-class='#menu1;hidden-xs'>
               <i className='icon icon--sm stack-interface stack-menu'></i>
             </a> */}
+            {loggedIn ? <LogOutButton /> : <LogInButton />}
           </div>
         </div>
       </div>
@@ -35,8 +40,10 @@ const Header = () => (
               </Link>
             </div>
           </div>
-          {/* <div className='col-9 text-right text-left-xs text-left-sm'>
-            <div className='bar__module'>
+          <div className='col-9 text-right text-left-xs text-left-sm'>
+            {loggedIn ? <LogOutButton /> : <LogInButton />}
+          </div>
+          {/* {<div className='bar__module'>
               <ul className='menu-horizontal text-left'></ul>
             </div>
             <div className='bar__module'>
@@ -46,11 +53,15 @@ const Header = () => (
                 </span>
               </Link>
             </div>
-          </div> */}
+          </div>} */}
         </div>
       </div>
     </nav>
   </div>
 );
+
+Header.propTypes = {
+  loggedIn: PropTypes.bool.required
+};
 
 export default Header;

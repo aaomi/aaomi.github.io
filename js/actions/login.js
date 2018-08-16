@@ -6,6 +6,7 @@ import api from 'js/actions/api';
 export const LOGIN_BEGIN = 'LOGIN_BEGIN';
 export const LOGIN_SUCCEEDED = 'LOGIN_SUCCEEDED';
 export const LOGIN_FAILED = 'LOGIN_FAILED';
+export const LOGOUT = 'LOGOUT';
 
 export function beginLogin() {
   return {
@@ -24,6 +25,12 @@ export function loginFailed(errorMessage) {
   return {
     type: LOGIN_FAILED,
     errorMessage
+  };
+}
+
+export function logout() {
+  return {
+    type: LOGOUT
   };
 }
 

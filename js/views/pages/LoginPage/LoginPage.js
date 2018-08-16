@@ -7,7 +7,7 @@ const LOGIN_PAGE_TEXT_USERNAME_PLACEHOLDER = 'Username or email';
 const LOGIN_PAGE_TEXT_PASSWORD_PLACEHOLDER = 'Password';
 const LOGIN_PAGE_TEXT_LOGIN_SUCCESSFUL = 'Login successful!';
 
-const LOGIN_PAGE_SUCCESS_REDIRECT_DELAY_TIME = 2000;
+const LOGIN_PAGE_SUCCESS_REDIRECT_DELAY_TIME = 500;
 
 export default class LoginPage extends React.Component {
   constructor(props) {

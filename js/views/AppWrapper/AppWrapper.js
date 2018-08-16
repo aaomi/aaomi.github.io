@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import 'js/views/AppWrapper/AppWrapper.scss';
 
-import Header from 'js/views/Header/Header';
+import Header from 'js/view_controllers/Header';
 
 export default class AppWrapper extends React.Component {
   constructor(props) {
