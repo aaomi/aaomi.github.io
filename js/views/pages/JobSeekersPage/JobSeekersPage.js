@@ -7,23 +7,19 @@ export default class JobSeekersPage extends React.Component {
   constructor(props) {
     super(props);
 
-    if (!props.loggingIn) {
-      props.fetchJobSeekers();
-    }
+    this.props.fetchJobSeekers();
   }
   componentDidUpdate() {
-    if (this.props.loading || this.props.loggingIn ||
-      (this.props.jobSeekers && this.props.jobSeekers.length)
-    ) {
-      return;
-    }
-
     this.props.fetchJobSeekers();
   }
   render() {
     return (
       <div className='upbound-page upbound-page--job-seekers'>
         <h1>Job Seekers Page</h1>
+        {this.props.jobSeekerErrorMessage
+          ? <span>{this.props.jobSeekerErrorMessage}</span>
+          : null
+        }
         {this.props.jobSeekers ? <ul>
           {this.props.jobSeekers.map((jobSeeker, index) => (
             <li key={`job-seeker-${index}`}>
@@ -38,8 +34,9 @@ export default class JobSeekersPage extends React.Component {
 }
 
 JobSeekersPage.propTypes = {
-  loggingIn: PropTypes.bool.required,
-  loading: PropTypes.bool.required,
+  loggingIn: PropTypes.bool.isRequired,
+  loading: PropTypes.bool.isRequired,
   jobSeekers: PropTypes.array,
-  fetchJobSeekers: PropTypes.func.required
+  fetchJobSeekers: PropTypes.func.isRequired,
+  jobSeekerErrorMessage: PropTypes.string
 };

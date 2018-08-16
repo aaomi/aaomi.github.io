@@ -6,6 +6,8 @@ import 'js/views/Header/Header.scss';
 
 import { ROUTE_HOME_PAGE } from 'js/constants/routes';
 
+import JobSeekersAdminLinkButton from 'js/view_controllers/JobSeekersAdminLinkButton';
+
 import LogInButton from 'js/view_controllers/LogInButton';
 import LogOutButton from 'js/views/LogOutButton/LogOutButton';
 
@@ -24,6 +26,7 @@ const Header = ({ loggedIn }) => (
             {/* <a href='javascript:void(0)' className='hamburger-toggle' data-toggle-class='#menu1;hidden-xs'>
               <i className='icon icon--sm stack-interface stack-menu'></i>
             </a> */}
+            {loggedIn ? <JobSeekersAdminLinkButton /> : null}
             {loggedIn ? <LogOutButton /> : <LogInButton />}
           </div>
         </div>
@@ -41,6 +44,7 @@ const Header = ({ loggedIn }) => (
             </div>
           </div>
           <div className='col-9 text-right text-left-xs text-left-sm'>
+            {loggedIn ? <JobSeekersAdminLinkButton /> : null}
             {loggedIn ? <LogOutButton /> : <LogInButton />}
           </div>
           {/* {<div className='bar__module'>
@@ -61,7 +65,7 @@ const Header = ({ loggedIn }) => (
 );
 
 Header.propTypes = {
-  loggedIn: PropTypes.bool.required
+  loggedIn: PropTypes.bool.isRequired
 };
 
 export default Header;

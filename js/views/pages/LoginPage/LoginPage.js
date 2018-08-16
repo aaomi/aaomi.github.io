@@ -58,8 +58,8 @@ export default class LoginPage extends React.Component {
 }
 
 LoginPage.propTypes = {
-  redirectToJobSeekersPage: PropTypes.func.required,
-  onLogin: PropTypes.func.required,
+  redirectToJobSeekersPage: PropTypes.func.isRequired,
+  onLogin: PropTypes.func.isRequired,
   loginSuccessful: PropTypes.bool,
   loggingIn: PropTypes.bool,
   errorMessage: PropTypes.string

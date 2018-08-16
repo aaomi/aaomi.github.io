@@ -32,8 +32,8 @@ export function fetchJobSeekers() {
 
     api.get('job_seekers').then((response) => {
       dispatch(jobSeekersFetchSucceeded(_get(response, 'data.data')));
-    }).catch((response) => {
-      dispatch(jobSeekersFetchFailed(_get(response, 'data.message')));
+    }).catch((error) => {
+      dispatch(jobSeekersFetchFailed(_get(error, 'response.data.message')));
     });
   };
 }

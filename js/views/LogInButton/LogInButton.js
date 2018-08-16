@@ -13,7 +13,7 @@ const LogInButton = ({ goToLoginPage }) => (
 );
 
 LogInButton.propTypes = {
-  goToLoginPage: PropTypes.bool.required
+  goToLoginPage: PropTypes.func.isRequired
 };
 
 export default LogInButton;
