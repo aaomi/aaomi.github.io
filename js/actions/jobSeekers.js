@@ -1,14 +1,24 @@
 import _get from 'lodash/get';
+import _isEqual from 'lodash/isEqual';
 
 import api from 'js/actions/api';
+
+import store from 'js/store';
+
+import axios from 'axios';
+const CancelToken = axios.CancelToken;
 
 export const JOB_SEEKERS_FETCH_BEGIN = 'JOB_SEEKERS_FETCH_BEGIN';
 export const JOB_SEEKERS_FETCH_SUCCEEDED = 'JOB_SEEKERS_FETCH_SUCCEEDED';
 export const JOB_SEEKERS_FETCH_FAILED = 'JOB_SEEKERS_FETCH_FAILED';
 
-function beginJobSeekersFetch() {
+export const JOB_SEEKERS_FETCH_CANCELLATION_MESSAGE = 'Job Seeker fetch cancelled';
+
+function beginJobSeekersFetch(query, cancelTokenSource) {
   return {
-    type: JOB_SEEKERS_FETCH_BEGIN
+    type: JOB_SEEKERS_FETCH_BEGIN,
+    query,
+    cancelTokenSource
   };
 }
 
@@ -26,11 +36,29 @@ function jobSeekersFetchFailed(errorMessage) {
   };
 }
 
-export function fetchJobSeekers() {
+export function fetchJobSeekers(query) {
   return dispatch => {
-    dispatch(beginJobSeekersFetch());
+    const jobSeekersState = store.getState().jobSeekers;
 
-    api.get('job_seekers').then((response) => {
+    if (jobSeekersState.cancelTokenSource) {
+      jobSeekersState.cancelTokenSource.cancel(JOB_SEEKERS_FETCH_CANCELLATION_MESSAGE);
+    }
+
+    if (jobSeekersState.errorMessage ||
+      (jobSeekersState.jobSeekers &&
+      _isEqual(query, jobSeekersState.query))
+    ) {
+      return;
+    }
+
+    const cancelTokenSource = CancelToken.source();
+
+    dispatch(beginJobSeekersFetch(query, cancelTokenSource));
+
+    api.get('job_seekers', {
+      params: query,
+      cancelToken: cancelTokenSource.token
+    }).then((response) => {
       dispatch(jobSeekersFetchSucceeded(_get(response, 'data.data')));
     }).catch((error) => {
       dispatch(jobSeekersFetchFailed(_get(error, 'response.data.message')));
