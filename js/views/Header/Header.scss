@@ -1,0 +1,34 @@
+@import '~scss/colors';
+
+$header-height: 60px;
+
+.header {
+  height: $header-height;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.header__link,
+.header__link-wrapper {
+  display: block;
+  float: left;
+}
+
+.header__link {
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: $header-height;
+
+  &:not(.header__link--logo) {
+    padding-left: .5rem;
+    padding-right: .5rem;
+  }
+}
+
+.header__link--logo {
+  max-width: 10rem;
+}
+
+.header__link-wrapper--right {
+  float: right;
+}

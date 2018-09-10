@@ -37,8 +37,7 @@ var webpack = require('webpack'),
 var config = {
   mode: process.env.NODE_ENV || 'development',
   entry: {
-    main: path.join(__dirname, 'index.js'),
-    vendor: path.join(__dirname, 'vendor.js')
+    main: path.join(__dirname, 'index.js')
   },
   output: {
     path: path.join(__dirname, WEBPACK_BUILD_DIRECTORY),

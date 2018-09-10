@@ -13,7 +13,7 @@ export default class AppWrapper extends React.Component {
   }
   render() {
     return (
-      <div className='upbound-app-wrapper'>
+      <div className='upbound-app-wrapper max-width-4 mx-auto px1'>
         <Header />
         {this.props.children}
       </div>

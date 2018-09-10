@@ -7,16 +7,19 @@ import AAOM_LOGO from 'img/aaom_logo.png';
 
 // import { ROUTE_CONTACT_PAGE } from 'js/constants/routes';
 
+const TEMP_LINK_AAOM = 'https://autismallianceofmichigan.org/';
+const TEMP_LINK_JOB_SEEKER_INTAKE = 'https://autismallianceofmichigan.org/employee-pre-assessment/';
+
 export default function HomePage() {
   return (
     <div className='upbound-page upbound-page--home' id='start'>
       <div className='upbound-page--home__hero--coming-soon'>
         <h1 className='upbound-page--home__hero--coming-soon__text__coming-soon'>Coming soon!</h1>
         <h2 className='upbound-page--home__hero--coming-soon__text__project-by'>A project by:</h2>
-        <a href='https://autismallianceofmichigan.org/'><img className='upbound-page--home__hero--coming-soon__logo--aaom' src={AAOM_LOGO} alt='Autism Alliance of Michigan' /></a>
+        <a href={TEMP_LINK_AAOM}><img className='upbound-page--home__hero--coming-soon__logo--aaom' src={AAOM_LOGO} alt='Autism Alliance of Michigan' /></a>
         <h2 className='upbound-page--home__hero--coming-soon__text--job-seeker-prompt'>Are you seeking a job? Fill out our form here: </h2>
         <h2>
-          <a href='https://autismallianceofmichigan.org/employee-pre-assessment/'>Job Seeker Intake</a>
+          <a href={TEMP_LINK_JOB_SEEKER_INTAKE}>Job Seeker Intake</a>
         </h2>
       </div>
       {/* <div className='main-container'>

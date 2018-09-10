@@ -1,0 +1,18 @@
+scss_files: 'scss/**/*.scss'
+
+exclude: 'node_modules/**'
+
+linters:
+  NameFormat:
+    enabled: false
+  Indentation:
+    width: 2
+    character: space
+  PropertySortOrder:
+    enabled: false
+  SelectorFormat:
+    enabled: false
+
+rules:
+  class-name-format:
+    convention: hyphenatedbem
