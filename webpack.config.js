@@ -2,8 +2,8 @@ var webpack = require('webpack'),
   path = require('path'),
   CleanWebpackPlugin = require('clean-webpack-plugin'),
   HtmlWebpackPlugin = require('html-webpack-plugin'),
-  ExtractTextPlugin = require('extract-text-webpack-plugin'),
   MinifyPlugin = require('babel-minify-webpack-plugin'),
+  MiniCssExtractPlugin = require('mini-css-extract-plugin'),
   __PROD__ = process.env.NODE_ENV === 'production',
   __DEV__ = !__PROD__,
   BABEL_LOADER_PRESETS_PRODUCTION = ['env', 'react', 'stage-0'],
@@ -48,13 +48,12 @@ var config = {
     rules: [
       {
         test: /\.(css|scss)$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            'css-loader',
-            'sass-loader'
-          ]
-        })
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'resolve-url-loader',
+          'sass-loader'
+        ]
       },
       {
         test: /\.pug$/,
@@ -62,7 +61,7 @@ var config = {
       },
       {
         // minify imported images and copy them to build directory
-        test: /\.(jpe?g|png|gif|svg)$/i,
+        test: /\.(jpe?g|png|gif)$/i,
         use: [
           {
             loader: 'file-loader',
@@ -95,13 +94,15 @@ var config = {
       },
       {
         // copy imported fonts to build directory
-        test: /\.(ttf|otf|eot|woff(2)?)(\?[a-z0-9]+)?$/,
+        test: /.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
         use: {
           loader: 'file-loader',
           query: {
             hash: 'sha512',
             digest: 'hex',
-            name: 'fonts/[name].[ext]'
+            name: '[name].[ext]',
+            outputPath: 'fonts/',
+            publicPath: 'fonts/'
           }
         }
       }
@@ -150,7 +151,9 @@ if (__DEV__) {
   );
 
   config.plugins.push(
-    new ExtractTextPlugin('[name].css'),
+    new MiniCssExtractPlugin({
+      filename: '[name].css'
+    }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.LoaderOptionsPlugin({
       debug: true
@@ -165,7 +168,9 @@ if (__DEV__) {
   );
 
   config.plugins.push(
-    new ExtractTextPlugin('[name].[hash].css'),
+    new MiniCssExtractPlugin({
+      filename: '[name].[hash].css'
+    }),
     new MinifyPlugin(),
     new webpack.optimize.AggressiveMergingPlugin()
   );

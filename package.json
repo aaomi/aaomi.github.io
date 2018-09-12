@@ -9,6 +9,7 @@
   },
   "main": "index.js",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.3.1",
     "ajv": "^6.4.0",
     "axios": "^0.18.0",
     "babel-core": "^6.21.0",
@@ -21,7 +22,6 @@
     "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^0.28.11",
     "extract-loader": "^2.0.1",
-    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^1.1.11",
     "history": "^4.7.2",
     "html-loader": "^0.5.5",
@@ -60,7 +60,9 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
     "http-server": "^0.11.1",
+    "mini-css-extract-plugin": "^0.4.2",
     "react-router-redux": "^5.0.0-alpha.9",
+    "resolve-url-loader": "^2.3.1",
     "webpack-cli": "^2.1.4",
     "webpack-dev-server": "^3.1.4"
   },

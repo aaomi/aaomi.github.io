@@ -1,0 +1,6 @@
+@import '~js/views/Header/Header';
+@import '~js/views/Footer/Footer';
+
+.upbound-page {
+  min-height: calc(100% - #{$header-height} - #{$footer-height + $footer-padding-top + $footer-padding-bottom});
+}

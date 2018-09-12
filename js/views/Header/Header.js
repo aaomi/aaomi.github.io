@@ -14,10 +14,10 @@ import { ROUTE_HOME_PAGE } from 'js/constants/routes';
 const TEMP_UPBOUND_AT_WORK_LOGO_ALT = 'Upbound at work';
 
 const Header = (/*{ loggedIn }*/) => (
-  <div className='header clearfix py1'>
+  <div className='header'>
     <div className='header__link header__link--logo'>
       <Link to={ROUTE_HOME_PAGE}>
-        <img className='fit' alt={TEMP_UPBOUND_AT_WORK_LOGO_ALT} src={require('img/upBound.png')} />
+        <img className='header__link--logo__image' alt={TEMP_UPBOUND_AT_WORK_LOGO_ALT} src={require('img/upBound.png')} />
       </Link>
     </div>
     {/* <div className='header__link-wrapper header__link-wrapper--right'>

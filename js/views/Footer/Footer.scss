@@ -1,0 +1,86 @@
+@import '~scss/colors';
+@import '~scss/grid';
+
+$footer-height: 10rem;
+$footer-padding-top: .5rem;
+$footer-padding-bottom: .5rem;
+
+$footer-contact-icon-size: 1.8rem;
+
+.footer {
+  min-height: $footer-height;
+  padding-top: $footer-padding-top;
+  padding-bottom: $footer-padding-bottom;
+  text-align: center;
+}
+
+.footer__project-by__logo--aaom {
+  height: 100%;
+  max-height: 70px;
+}
+
+.footer__contact__text,
+.footer__contact__icon,
+.footer__project-by__logo--aaom,
+.footer__project-by__text {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.footer__project-by__text {
+  margin-right: 2em;
+}
+
+.footer__project-by__text {
+  text-align: right;
+}
+
+.footer__project-by__text__title {
+  font-size: 1.2rem;
+}
+
+.footer__project-by__text__subtitle {
+  margin-top: 0.25rem;
+  font-size: 1rem;
+  color: $upbound-gray-light;
+}
+
+.footer__contact__icon {
+  font-size: $footer-contact-icon-size;
+  margin-right: 0.5rem;
+}
+
+.footer__contact {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: .5rem;
+  line-height: $footer-contact-icon-size;
+  border-top: 1px solid $upbound-gray-lightest;
+  border-bottom: 1px solid $upbound-gray-lightest;
+}
+
+.footer__contact__item:first-of-type {
+  padding-left: .5rem;
+}
+
+.footer__contact__item:last-of-type {
+  padding-right: .5rem;
+}
+
+.footer__contact__item--phone {
+  text-align: left;
+}
+
+.footer__contact__item--email {
+  text-align: center;
+}
+
+.footer__contact__item--linkedin {
+  text-align: right;
+}
+
+@media (max-width: $breakpoint-md-min) {
+  .footer__project-by__text__subtitle {
+    max-width: 24rem;
+  }
+}

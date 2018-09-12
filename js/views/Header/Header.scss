@@ -1,9 +1,13 @@
 @import '~scss/colors';
 
-$header-height: 60px;
+$header-height: 5rem;
+$header-padding-top: 10px;
+$header-padding-bottom: 10px;
 
 .header {
   height: $header-height;
+  padding-top: $header-padding-top;
+  padding-bottom: $header-padding-bottom;
   overflow: hidden;
   white-space: nowrap;
 }
@@ -17,7 +21,7 @@ $header-height: 60px;
 .header__link {
   font-size: 1rem;
   font-weight: bold;
-  line-height: $header-height;
+  line-height: calc(#{$header-height} - #{$header-padding-top} - #{$header-padding-bottom});
 
   &:not(.header__link--logo) {
     padding-left: .5rem;
@@ -25,8 +29,10 @@ $header-height: 60px;
   }
 }
 
-.header__link--logo {
-  max-width: 10rem;
+.header__link--logo__image {
+  height: 100%;
+  max-height: 60px;
+  vertical-align: middle;
 }
 
 .header__link-wrapper--right {
