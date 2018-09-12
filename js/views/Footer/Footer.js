@@ -9,7 +9,6 @@ const TEMP_TEXT_PROJECT_BY_AAOM = 'Upbound at Work is powered by the:';
 const TEMP_SUBTEXT_PROJECT_BY_AAOM = 'Please visit our site to get help or resources for an autism diagnosis';
 const TEMP_TEXT_CONTACT_PHONE_NUMBER = '877.463.2266';
 const TEMP_TEXT_CONTACT_EMAIL_ADDRESS = 'upbound@aaomi.org';
-// const TEMP_TEXT_CONTACT_US = 'Contact Us';
 const TEMP_LINK_LINKEDIN = 'https://www.linkedin.com/company/uboundatwork/';
 const TEMP_HANDLE_LINKEDIN = 'upboundatwork';
 
