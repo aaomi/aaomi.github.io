@@ -3,4 +3,5 @@
 
 .upbound-page {
   min-height: calc(100% - #{$header-height} - #{$footer-height + $footer-padding-top + $footer-padding-bottom});
+  padding-bottom: 100px;
 }
