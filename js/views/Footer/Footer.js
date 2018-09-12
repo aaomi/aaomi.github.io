@@ -16,7 +16,7 @@ const Footer = (/*{ loggedIn }*/) => (
   <div className='footer'>
     <div className='footer__contact clearfix'>
       {/* <div className=''>{TEMP_TEXT_CONTACT_US}</div> */}
-      <a className='col col-4 footer__contact__item footer__contact__item--phone' href={`tel:${TEMP_TEXT_CONTACT_PHONE_NUMBER.replace('.', '')}`}>
+      <a className='col col-4 footer__contact__item footer__contact__item--phone' href={`tel:${TEMP_TEXT_CONTACT_PHONE_NUMBER.replace(/\./g, '')}`}>
         <i className='xs-hide fas fa-phone-square footer__contact__icon footer__contact__icon--phone'></i>
         <span className='footer__contact__text'>{TEMP_TEXT_CONTACT_PHONE_NUMBER}</span>
       </a>
