@@ -6609,6 +6609,29 @@ body {
   }
 }
 
+.clearfix:after,
+.upbound-page:after,
+.clearfix:before,
+.upbound-page:before {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after,
+.upbound-page:after {
+  clear: both;
+}
+
+.btn {
+  font-family: 'Roboto', 'Helvetica', sans-serif;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
 body {
   font-family: 'Roboto', 'Helvetica', sans-serif;
   font-size: 1rem;
@@ -6642,6 +6665,19 @@ h6,
 .h5,
 .h6 {
   font-weight: 300;
+}
+
+.clearfix:after,
+.upbound-page:after,
+.clearfix:before,
+.upbound-page:before {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after,
+.upbound-page:after {
+  clear: both;
 }
 
 .header {
@@ -6758,8 +6794,9 @@ h6,
 }
 
 .upbound-page {
-  min-height: calc(100% - 5rem - 11rem);
+  min-height: calc(100% - 5rem - 10rem);
   padding-bottom: 100px;
+  margin: 0;
 }
 .upbound-app-wrapper {
   height: 100%;
@@ -6875,35 +6912,59 @@ h6,
     max-width: 24rem;
   }
 }
-.upbound-page--home__hero--coming-soon {
-  max-width: 100%;
-  margin: 0 auto;
-  margin-top: 1em;
+.upbound-page--home {
   text-align: center;
 }
 
-.upbound-page--home__hero--coming-soon__logo--aaom {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.upbound-page--home__hero--coming-soon__text__coming-soon {
+.upbound-page--home__call-to-action__title {
   font-weight: 400;
-}
-
-@media (min-width: 768px) {
-  .upbound-page--home__hero--coming-soon__text__coming-soon {
-    padding: 1em 0;
-  }
-}
-
-.upbound-page--home__hero--coming-soon__text--job-seeker-prompt {
-  margin-top: 1em;
+  color: #1a1a1a;
 }
 
 .upbound-page--home__hero__title {
-  padding-top: 4rem;
-  padding-bottom: 6rem;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
   color: #96c757;
   font-weight: 500;
+}
+
+.upbound-page--home__intro-paragraph {
+  line-height: 2.5rem;
+  margin-bottom: 4rem;
+  color: #1a1a1a;
+}
+
+.upbound-page--home__call-to-action__description {
+  line-height: 2rem;
+  color: #4d4d4d;
+}
+.upbound-page--job-seekers__title {
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  color: #1a1a1a;
+  font-size: 2.5rem;
+}
+
+.upbound-page--job-seekers__objective-list-title {
+  margin-top: 4rem;
+}
+
+.upbound-page--job-seekers__objective-list {
+  padding-bottom: 4rem;
+}
+.upbound-page--employers__title {
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  color: #1a1a1a;
+  font-size: 2.5rem;
+}
+
+.upbound-page--employers__objective-list-title {
+  margin-top: 4rem;
+}
+
+.upbound-page--employers__objective-list {
+  padding-bottom: 4rem;
 }
