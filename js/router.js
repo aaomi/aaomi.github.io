@@ -11,14 +11,17 @@ import AppWrapper from 'js/view_controllers/AppWrapper';
 import HomePage from 'js/view_controllers/pages/HomePage';
 // import ContactPage from 'js/view_controllers/pages/ContactPage';
 // import LoginPage from 'js/view_controllers/pages/LoginPage';
-// import JobSeekersPage from 'js/view_controllers/pages/JobSeekersPage';
+import JobSeekersPage from 'js/view_controllers/pages/JobSeekersPage';
+import EmployersPage from 'js/view_controllers/pages/EmployersPage';
 
 import {
   ROUTE_HOME_PAGE,
+  ROUTE_JOB_SEEKERS_PAGE,
+  ROUTE_EMPLOYERS_PAGE
   // ROUTE_LOGIN_PAGE,
   // ROUTE_SIGN_UP_PAGE,
   // ROUTE_RESET_PASSWORD_PAGE,
-  // ROUTE_JOB_SEEKERS_PAGE
+  // ROUTE_ADMIN_JOB_SEEKERS_PAGE
 } from 'js/constants/routes';
 
 ReactDOM.render((
@@ -31,7 +34,8 @@ ReactDOM.render((
           {/* <Route component={LoginPage} path={ROUTE_LOGIN_PAGE} /> */}
           {/* <Route component={SignUpPage} path={ROUTE_SIGN_UP_PAGE} />
           <Route component={ResetPasswordPage} path={ROUTE_RESET_PASSWORD_PAGE} />*/}
-          {/* <Route component={JobSeekersPage} path={ROUTE_JOB_SEEKERS_PAGE} /> */}
+          <Route component={JobSeekersPage} path={ROUTE_JOB_SEEKERS_PAGE} />
+          <Route component={EmployersPage} path={ROUTE_EMPLOYERS_PAGE} />
           <Redirect from='*' to={ROUTE_HOME_PAGE} />
         </Switch>
       </AppWrapper>

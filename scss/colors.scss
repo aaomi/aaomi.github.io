@@ -6,6 +6,9 @@ $aaom-navy: #425563;
 $aaom-aqua: #00859b;
 
 $upbound-green: #96c757;
+$upbound-gray-darkest: lighten($black, 10);
+$upbound-gray-darker: lighten($black, 20);
+$upbound-gray-dark: lighten($black, 30);
 $upbound-gray-light: darken($white, 30);
 $upbound-gray-lighter: darken($white, 20);
 $upbound-gray-lightest: darken($white, 10);

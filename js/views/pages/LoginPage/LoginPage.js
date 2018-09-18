@@ -40,7 +40,7 @@ export default class LoginPage extends React.Component {
   componentDidUpdate() {
     if (this.props.loginSuccessful) {
       setTimeout(() => {
-        this.props.redirectToJobSeekersPage();
+        this.props.redirectToAdminJobSeekersPage();
       }, LOGIN_PAGE_SUCCESS_REDIRECT_DELAY_TIME);
     }
   }
@@ -58,7 +58,7 @@ export default class LoginPage extends React.Component {
 }
 
 LoginPage.propTypes = {
-  redirectToJobSeekersPage: PropTypes.func.isRequired,
+  redirectToAdminJobSeekersPage: PropTypes.func.isRequired,
   onLogin: PropTypes.func.isRequired,
   loginSuccessful: PropTypes.bool,
   loggingIn: PropTypes.bool,

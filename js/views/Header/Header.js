@@ -4,7 +4,11 @@ import { Link } from 'react-router-dom';
 
 import 'js/views/Header/Header.scss';
 
-import { ROUTE_HOME_PAGE } from 'js/constants/routes';
+import {
+  ROUTE_HOME_PAGE,
+  ROUTE_JOB_SEEKERS_PAGE,
+  ROUTE_EMPLOYERS_PAGE
+} from 'js/constants/routes';
 
 // import JobSeekersAdminLinkButton from 'js/view_controllers/JobSeekersAdminLinkButton';
 //
@@ -20,16 +24,22 @@ const Header = (/*{ loggedIn }*/) => (
         <img className='header__link--logo__image' alt={TEMP_UPBOUND_AT_WORK_LOGO_ALT} src={require('img/upBound.png')} />
       </Link>
     </div>
-    {/* <div className='header__link-wrapper header__link-wrapper--right'>
-      {loggedIn ? <div className='header__link'>
+    <div className='header__link-wrapper header__link-wrapper--right'>
+      <div className='header__link'>
+        <Link to={ROUTE_JOB_SEEKERS_PAGE}>Job Seekers</Link>
+      </div>
+      <div className='header__link'>
+        <Link to={ROUTE_EMPLOYERS_PAGE}>Employers</Link>
+      </div>
+      {/* {loggedIn ? <div className='header__link'>
         <JobSeekersAdminLinkButton />
       </div> : null}
       {loggedIn ? <div className='header__link'>
         <LogOutButton />
       </div> : <div className='header__link'>
         <LogInButton />
-      </div>}
-    </div> */}
+      </div>} */}
+    </div>
   </div>
 );
 

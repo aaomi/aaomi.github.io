@@ -4,7 +4,7 @@ import LoginPage from 'js/views/pages/LoginPage/LoginPage';
 
 import { login } from 'js/actions/login';
 
-import { ROUTE_JOB_SEEKERS_PAGE } from 'js/constants/routes';
+import { ROUTE_ADMIN_JOB_SEEKERS_PAGE } from 'js/constants/routes';
 
 import { push } from 'react-router-redux';
 
@@ -19,7 +19,7 @@ export default connect(state => ({
       password
     }));
   },
-  redirectToJobSeekersPage: () => {
-    dispatch(push(ROUTE_JOB_SEEKERS_PAGE));
+  redirectToAdminJobSeekersPage: () => {
+    dispatch(push(ROUTE_ADMIN_JOB_SEEKERS_PAGE));
   }
 }))(LoginPage);

@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const JobSeekersAdminLinkButton = ({ goToJobSeekersPage }) => (
+const JobSeekersAdminLinkButton = ({ goToAdminJobSeekersPage }) => (
   <a
-    onClick={goToJobSeekersPage}
+    onClick={goToAdminJobSeekersPage}
     role='button'
     tabIndex='0'
     href='javascript:void(0)'
@@ -13,7 +13,7 @@ const JobSeekersAdminLinkButton = ({ goToJobSeekersPage }) => (
 );
 
 JobSeekersAdminLinkButton.propTypes = {
-  goToJobSeekersPage: PropTypes.func.isRequired
+  goToAdminJobSeekersPage: PropTypes.func.isRequired
 };
 
 export default JobSeekersAdminLinkButton;
