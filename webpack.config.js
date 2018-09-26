@@ -76,18 +76,20 @@ var config = {
             query: {
               mozjpeg: {
                 progressive: true,
+                quality: 65
               },
               gifsicle: {
-                interlaced: false,
+                interlaced: false
               },
               optipng: {
-                optimizationLevel: 7,
+                optimizationLevel: 7
               },
               pngquant: {
-                quality: '75-90',
-                speed: 3,
+                quality: '65-90',
+                speed: 4
               },
-              bypassOnDebug: true
+              bypassOnDebug: false,
+              disable: false
             }
           }
         ]

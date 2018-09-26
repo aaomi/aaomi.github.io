@@ -15,7 +15,7 @@ const TEMP_OBJECTIVES = [
 
 const JobSeekersPage = function() {
   return (
-    <div className='upbound-page upbound-page--job-seekers'>
+    <div className='upbound-page upbound-page--job-seekers max-width-4 mx-auto'>
       <h1 className='upbound-page--job-seekers__title'>Job Seekers</h1>
       <h1 className='upbound-page--job-seekers__objective-list-title'>{'Here\'s what we do for job seekers with disabilities:'}</h1>
       <ul className='upbound-page--job-seekers__objective-list'>
@@ -29,7 +29,7 @@ const JobSeekersPage = function() {
           title='Job Seeker Intake'
           src='https://docs.google.com/forms/d/e/1FAIpQLSdGoY1xqYNjAUdkj5jYy2rf32q8LqdUhs6433fGtnSEtjdFiQ/viewform?embedded=true'
           width='700'
-          height='2945'
+          height='3000'
           frameBorder='0'
           marginHeight='0'
           marginWidth='0'

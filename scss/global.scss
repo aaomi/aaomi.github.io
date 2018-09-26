@@ -1,3 +1,5 @@
+@import '~scss/grid';
+
 html,
 body {
   margin: 0;
@@ -16,14 +18,4 @@ body {
   margin: 0;
   position: relative;
   top: 4px;
-  @media (max-width: 767px) {
-    &.logo-light {
-      display: none;
-    }
-  }
-  @media (min-width: 768px) {
-    &.logo-dark {
-      display: none;
-    }
-  }
 }

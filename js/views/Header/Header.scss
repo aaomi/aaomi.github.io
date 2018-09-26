@@ -1,8 +1,19 @@
 @import '~scss/colors';
+@import '~scss/grid';
 
 $header-height: 5rem;
 $header-padding-top: 10px;
 $header-padding-bottom: 10px;
+
+.header-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: $white;
+  border-bottom: 1px solid $upbound-gray-lightest;
+}
 
 .header {
   height: $header-height;
@@ -19,8 +30,13 @@ $header-padding-bottom: 10px;
 }
 
 .header__link {
-  font-size: 1rem;
-  font-weight: bold;
+  font-size: 1.1rem;
+
+  @media (max-width: $breakpoint-sm-min) {
+    font-size: 1em;
+  }
+
+  font-weight: 500;
   line-height: calc(#{$header-height} - #{$header-padding-top} - #{$header-padding-bottom});
 
   &:not(.header__link--logo) {
@@ -32,6 +48,9 @@ $header-padding-bottom: 10px;
 .header__link--logo__image {
   height: 100%;
   max-height: 60px;
+  @media (max-width: 24em) {
+    max-height: 40px;
+  }
   vertical-align: middle;
 }
 

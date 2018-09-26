@@ -1,5 +1,6 @@
 @import '~scss/colors';
 @import '~scss/grid';
+@import '~scss/mixins';
 
 $footer-height: 10rem;
 $footer-padding-top: .5rem;
@@ -12,6 +13,8 @@ $footer-contact-icon-size: 1.8rem;
   padding-top: $footer-padding-top;
   padding-bottom: $footer-padding-bottom;
   text-align: center;
+
+  @extend .clearfix;
 }
 
 .footer__project-by__logo--aaom {
@@ -48,6 +51,7 @@ $footer-contact-icon-size: 1.8rem;
 .footer__contact__icon {
   font-size: $footer-contact-icon-size;
   margin-right: 0.5rem;
+  margin-left: 0.5rem;
 }
 
 .footer__contact {

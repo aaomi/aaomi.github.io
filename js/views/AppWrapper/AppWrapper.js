@@ -14,10 +14,10 @@ export default class AppWrapper extends React.Component {
   }
   render() {
     return (
-      <div className='upbound-app-wrapper max-width-4 mx-auto px1'>
+      <div className='upbound-app-wrapper'>
         <Header />
         {this.props.children}
-        <Footer />
+        {this.props.footerExcluded(this.props.location.pathname) ? null : <Footer />}
       </div>
     );
   }
@@ -25,5 +25,7 @@ export default class AppWrapper extends React.Component {
 
 AppWrapper.propTypes = {
   children: PropTypes.node.isRequired,
-  authenticate: PropTypes.func.isRequired
+  location: PropTypes.object.isRequired,
+  authenticate: PropTypes.func.isRequired,
+  footerExcluded: PropTypes.func.isRequired
 };

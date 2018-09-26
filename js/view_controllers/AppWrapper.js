@@ -8,7 +8,15 @@ import { updateAuthenticationToken, AUTH_TOKEN_COOKIE_NAME } from 'js/actions/au
 
 import AppWrapper from 'js/views/AppWrapper/AppWrapper';
 
-export default withRouter(connect(null, dispatch => ({
+import {
+  ROUTE_HOME_PAGE
+} from 'js/constants/routes';
+
+export default withRouter(connect(() => ({
+  footerExcluded: (pathname) => {
+    return [ROUTE_HOME_PAGE].indexOf(pathname) !== -1;
+  }
+}), dispatch => ({
   authenticate: () => {
     dispatch(beginLogin());
 

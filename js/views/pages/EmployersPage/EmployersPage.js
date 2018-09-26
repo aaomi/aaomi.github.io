@@ -15,7 +15,7 @@ const TEMP_OBJECTIVES = [
 
 const EmployersPage = function() {
   return (
-    <div className='upbound-page upbound-page--employers'>
+    <div className='upbound-page upbound-page--employers max-width-4 mx-auto'>
       <h1 className='upbound-page--employers__title'>{TEMP_TEXT_TITLE_EMPLOYERS_PAGE}</h1>
       <h1 className='upbound-page--employers__objective-list-title'>{'Here\'s what we do for companies looking to hire:'}</h1>
       <ul className='upbound-page--employers__objective-list'>

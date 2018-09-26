@@ -24,6 +24,15 @@ import {
   // ROUTE_ADMIN_JOB_SEEKERS_PAGE
 } from 'js/constants/routes';
 
+// TODO: move this?
+// Scrolls to the top of the page on ANY route change
+history.listen(() => {
+  window.scrollTo({
+    'left': 0,
+    'top': 0
+  });
+});
+
 ReactDOM.render((
   <Provider store={store}>
     <ConnectedRouter history={history}>
